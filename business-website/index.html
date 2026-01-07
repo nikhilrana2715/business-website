@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spice Symphony | Authentic Indian Fusion Restaurant</title>
+    <meta name="description" content="Experience authentic Indian fusion cuisine with modern twists at Spice Symphony">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head> 
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html" aria-label="Spice Symphony Home">
+                    <h1>Spice Symphony</h1>
+                    <p class="tagline">Indian Fusion Cuisine</p>
+                </a>
+            </div>
+
+            <!-- Main Navigation -->
+            <nav class="main-nav" aria-label="Main Navigation">
+                <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+                
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Menu & Services</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="#reservation" class="btn btn-primary nav-cta">Reserve Table</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-heading">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 id="hero-heading">Experience the Symphony of Flavors</h1>
+                    <p class="hero-subtitle">Where traditional Indian spices meet modern culinary artistry</p>
+                    <div class="hero-buttons">
+                        <a href="services.html#menu" class="btn btn-primary">View Our Menu</a>
+                        <a href="#reservation" class="btn btn-secondary">Book a Table</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="images/hero-banner.jpg" alt="Beautifully plated Indian fusion dishes including butter chicken, naan, and biryani" width="800" height="600" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Dishes -->
+        <section class="featured-dishes" aria-labelledby="featured-heading">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="featured-heading">Chef's Specialties</h2>
+                    <p class="section-subtitle">Our most loved creations</p>
+                </header>
+
+                <div class="dishes-grid">
+                    <article class="dish-card">
+                        <div class="dish-image">
+                            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Butter Chicken with fresh herbs and naan bread" width="400" height="300" loading="lazy">
+                        </div>
+                        <div class="dish-content">
+                            <h3>Modern Butter Chicken</h3>
+                            <p>Traditional butter chicken reimagined with smoked paprika and fresh cream reduction</p>
+                            <div class="dish-price">₹450</div>
+                            <span class="veg-indicator" aria-label="Vegetarian dish">🟢 Veg</span>
+                        </div>
+                    </article>
+
+                    <article class="dish-card">
+                        <div class="dish-image">
+                            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Spicy lamb biryani served in copper pot" width="400" height="300" loading="lazy">
+                        </div>
+                        <div class="dish-content">
+                            <h3>Royal grilled chicken</h3>
+                            <p>Royal grilled chicken with herbs, smoky char, peppers, onions, and lemon zest.</p>
+                            <div class="dish-price">₹650</div>
+                            <span class="non-veg-indicator" aria-label="Non-vegetarian dish">🔴 Non-Veg</span>
+                        </div>
+                    </article>
+
+                    <article class="dish-card">
+                        <div class="dish-image">
+                            <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Colorful platter of various Indian street food" width="400" height="300" loading="lazy">
+                        </div>
+                        <div class="dish-content">
+                            <h3>Street Food Platter</h3>
+                            <p>Assortment of pani puri, chaat, and vada pav with modern presentation</p>
+                            <div class="dish-price">₹380</div>
+                            <span class="veg-indicator" aria-label="Vegetarian dish">🟢 Veg</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reservation Form -->
+        <section id="reservation" class="reservation" aria-labelledby="reservation-heading">
+            <div class="container">
+                <div class="reservation-wrapper">
+                    <div class="reservation-info">
+                        <h2 id="reservation-heading">Make a Reservation</h2>
+                        <p>Book your table in advance to ensure the best dining experience</p>
+                        <ul class="contact-info">
+                            <li>📍 123 Food Street, Mumbai</li>
+                            <li>📞 +91 98765 43210</li>
+                            <li>🕒 Open: 11 AM - 11 PM</li>
+                        </ul>
+                    </div>
+                    
+                    <form class="reservation-form" id="reservationForm" aria-labelledby="reservation-heading">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required aria-required="true">
+                            <span class="error-message" id="nameError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required aria-required="true">
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required aria-required="true">
+                            <span class="error-message" id="phoneError"></span>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Date *</label>
+                                <input type="date" id="date" name="date" required aria-required="true">
+                                <span class="error-message" id="dateError"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="time">Time *</label>
+                                <input type="time" id="time" name="time" required aria-required="true">
+                                <span class="error-message" id="timeError"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="guests">Guests *</label>
+                                <select id="guests" name="guests" required aria-required="true">
+                                    <option value="">Select</option>
+                                    <option value="1">1 Person</option>
+                                    <option value="2">2 People</option>
+                                    <option value="3">3 People</option>
+                                    <option value="4">4 People</option>
+                                    <option value="5">5 People</option>
+                                    <option value="6">6+ People</option>
+                                </select>
+                                <span class="error-message" id="guestsError"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Special Requests</label>
+                            <textarea id="message" name="message" rows="3"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-block">Book Table</button>
+                        <p class="form-note">* Required fields</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials" aria-labelledby="testimonials-heading">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="testimonials-heading">What Our Guests Say</h2>
+                    <p class="section-subtitle">Real experiences from our valued customers</p>
+                </header>
+                
+                <div class="testimonials-grid">
+                    <blockquote class="testimonial">
+                        <div class="rating" aria-label="Rating: 5 out of 5 stars">★★★★★</div>
+                        <p>"The best Indian fusion experience in the city! The modern twist to classic dishes is extraordinary."</p>
+                        <footer>
+                            <cite>Priya Sharma</cite>
+                            <span class="guest-type">Food Blogger</span>
+                        </footer>
+                    </blockquote>
+                    
+                    <blockquote class="testimonial">
+                        <div class="rating" aria-label="Rating: 5 out of 5 stars">★★★★★</div>
+                        <p>"Perfect ambiance, exceptional service, and food that tells a story. Will definitely return!"</p>
+                        <footer>
+                            <cite>Rahul Verma</cite>
+                            <span class="guest-type">Regular Guest</span>
+                        </footer>
+                    </blockquote>
+                    
+                    <blockquote class="testimonial">
+                        <div class="rating" aria-label="Rating: 4 out of 5 stars">★★★★☆</div>
+                        <p>"Innovative flavors while keeping the authenticity intact. The biryani is a must-try!"</p>
+                        <footer>
+                            <cite>Anjali Patel</cite>
+                            <span class="guest-type">First-time Visitor</span>
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Spice Symphony</h3>
+                    <p>Where traditional Indian spices meet modern culinary artistry. Experience the symphony of flavors.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Follow us on Facebook">Facebook</a>
+                        <a href="#" aria-label="Follow us on Instagram">Instagram</a>
+                        <a href="#" aria-label="Follow us on Twitter">Twitter</a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Menu</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <address>
+                        <!-- <p>📍 123 Food Street, Colaba<br>Mumbai, Maharashtra 400005</p> -->
+                        <p>📍 123 Food Street, KOKO<br>Mumbai, Maharashtra 400013</p>
+
+                        <p>📞 +91 07715963030</p>
+                        <p>✉️ info@spicesymphony.com</p>
+                    </address>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Opening Hours</h4>
+                    <ul class="timings">
+                        <li><span>Monday - Friday:</span> 11 AM - 11 PM</li>
+                        <li><span>Saturday - Sunday:</span> 10 AM - 12 AM</li>
+                        <li><span>Holidays:</span> 12 PM - 11 PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Spice Symphony. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                <p class="accessibility-statement">We are committed to making our website accessible to all users.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/menu-toggle.js" defer></script>
+    <script src="js/form-validation.js" defer></script>
+    <script src="js/main.js" defer></script>
+</body>
+</html>

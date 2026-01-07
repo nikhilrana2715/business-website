@@ -1,0 +1,606 @@
+// ============================================
+// BUTTON COMPONENTS
+// ============================================
+.btn {
+  @include button-base;
+  
+  &-primary {
+    @include button-primary;
+  }
+  
+  &-secondary {
+    @include button-secondary;
+  } 
+  
+  &-outline {
+    @include button-outline;
+  }
+  
+  &-block {
+    display: block;
+    width: 100%;
+  }
+}
+
+// ============================================
+// NAVIGATION COMPONENTS
+// ============================================
+.main-nav {
+  .nav-list {
+    @include flex-column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: map-get($spacings, 4);
+    
+    @include respond-to('md') {
+      flex-direction: row;
+      gap: map-get($spacings, 6);
+    }
+  }
+  
+  .nav-link {
+    color: $dark-color;
+    text-decoration: none;
+    padding: map-get($spacings, 2) 0;
+    position: relative;
+    transition: $transition-base;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: $primary-color;
+      transition: $transition-base;
+    }
+    
+    &:hover {
+      color: $primary-color;
+      
+      &::after {
+        width: 100%;
+      }
+    }
+    
+    &.active {
+      color: $primary-color;
+      font-weight: map-get($font-weights, 'semi-bold');
+      
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+  
+  .menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: map-get($spacings, 2);
+    
+    @include respond-to('md') {
+      display: none;
+    }
+    
+    .hamburger {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: $dark-color;
+      position: relative;
+      transition: $transition-base;
+      
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        width: 24px;
+        height: 2px;
+        background-color: $dark-color;
+        transition: $transition-base;
+      }
+      
+      &::before {
+        top: -6px;
+      }
+      
+      &::after {
+        bottom: -6px;
+      }
+    }
+    
+    &[aria-expanded="true"] {
+      .hamburger {
+        background-color: transparent;
+        
+        &::before {
+          transform: rotate(45deg);
+          top: 0;
+        }
+        
+        &::after {
+          transform: rotate(-45deg);
+          bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+// ============================================
+// CARD COMPONENTS
+// ============================================
+.dish-card {
+  @include card-base;
+  @include flex-column;
+  
+  .dish-image {
+    @include aspect-ratio(4, 3);
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  
+  .dish-content {
+    padding: map-get($spacings, 4);
+    
+    h3 {
+      margin: 0 0 map-get($spacings, 2);
+      @include font-size('xl');
+      color: $dark-color;
+    }
+    
+    p {
+      color: $medium-gray;
+      margin-bottom: map-get($spacings, 4);
+      line-height: 1.6;
+    }
+    
+    .dish-price {
+      @include font-size('lg');
+      @include font-weight('bold');
+      color: $primary-color;
+      margin-bottom: map-get($spacings, 2);
+    }
+  }
+}
+
+.menu-item {
+  padding: map-get($spacings, 4);
+  border-bottom: 1px solid $light-gray;
+  
+  &:last-child {
+    border-bottom: none;
+  }
+  
+  .menu-item-header {
+    @include flex-between;
+    margin-bottom: map-get($spacings, 2);
+    
+    h3 {
+      margin: 0;
+      @include font-size('lg');
+      color: $dark-color;
+    }
+    
+    .item-price {
+      @include font-size('lg');
+      @include font-weight('bold');
+      color: $primary-color;
+    }
+  }
+  
+  .item-description {
+    color: $medium-gray;
+    margin-bottom: map-get($spacings, 3);
+    line-height: 1.6;
+  }
+  
+  .item-tags {
+    display: flex;
+    gap: map-get($spacings, 2);
+  }
+  
+  .tag {
+    @include font-size('xs');
+    padding: map-get($spacings, 1) map-get($spacings, 3);
+    background-color: $light-color;
+    border-radius: map-get($border-radius, 'full');
+    color: $medium-gray;
+  }
+}
+
+// ============================================
+// FORM COMPONENTS
+// ============================================
+.form-group {
+  margin-bottom: map-get($spacings, 4);
+  
+  label {
+    display: block;
+    margin-bottom: map-get($spacings, 2);
+    @include font-weight('medium');
+    color: $dark-color;
+  }
+  
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: map-get($spacings, 3) map-get($spacings, 4);
+    border: 1px solid $light-gray;
+    border-radius: map-get($border-radius, 'md');
+    font-family: $font-primary;
+    @include font-size('base');
+    transition: $transition-base;
+    
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+      box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+    }
+    
+    &:invalid {
+      border-color: $error-color;
+    }
+  }
+  
+  .error-message {
+    display: block;
+    margin-top: map-get($spacings, 2);
+    @include font-size('sm');
+    color: $error-color;
+  }
+}
+
+.form-row {
+  @include flex-column;
+  gap: map-get($spacings, 4);
+  
+  @include respond-to('md') {
+    flex-direction: row;
+  }
+  
+  .form-group {
+    flex: 1;
+    margin-bottom: 0;
+  }
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: map-get($spacings, 2);
+  
+  input[type="checkbox"] {
+    width: auto;
+    margin-top: map-get($spacings, 1);
+  }
+  
+  label {
+    margin-bottom: 0;
+    flex: 1;
+  }
+}
+
+.form-actions {
+  display: flex;
+  gap: map-get($spacings, 4);
+  margin-top: map-get($spacings, 6);
+}
+
+// ============================================
+// INDICATOR COMPONENTS
+// ============================================
+.veg-indicator,
+.non-veg-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: map-get($spacings, 1);
+  @include font-size('sm');
+  padding: map-get($spacings, 1) map-get($spacings, 3);
+  border-radius: map-get($border-radius, 'full');
+}
+
+.veg-indicator {
+  background-color: rgba($accent-color, 0.1);
+  color: darken($accent-color, 20%);
+}
+
+.non-veg-indicator {
+  background-color: rgba($error-color, 0.1);
+  color: darken($error-color, 20%);
+}
+
+// ============================================
+// TESTIMONIAL COMPONENT
+// ============================================
+.testimonial {
+  @include card-base;
+  padding: map-get($spacings, 6);
+  
+  .rating {
+    color: $warning-color;
+    margin-bottom: map-get($spacings, 4);
+    @include font-size('lg');
+  }
+  
+  p {
+    font-style: italic;
+    line-height: 1.8;
+    color: $dark-color;
+    margin-bottom: map-get($spacings, 4);
+  }
+  
+  footer {
+    border-top: 1px solid $light-gray;
+    padding-top: map-get($spacings, 4);
+    
+    cite {
+      display: block;
+      @include font-weight('semi-bold');
+      color: $dark-color;
+    }
+    
+    .guest-type {
+      @include font-size('sm');
+      color: $medium-gray;
+    }
+  }
+}
+
+// ============================================
+// SERVICE CARD COMPONENT
+// ============================================
+.service-card {
+  @include card-base;
+  @include flex-column;
+  height: 100%;
+  padding: map-get($spacings, 6);
+  
+  .service-icon {
+    @include font-size('3xl');
+    margin-bottom: map-get($spacings, 4);
+  }
+  
+  h3 {
+    margin: 0 0 map-get($spacings, 3);
+    @include font-size('xl');
+    color: $dark-color;
+  }
+  
+  p {
+    color: $medium-gray;
+    line-height: 1.6;
+    margin-bottom: map-get($spacings, 4);
+  }
+  
+  .service-features {
+    margin: 0 0 map-get($spacings, 6);
+    padding: 0 0 0 map-get($spacings, 4);
+    
+    li {
+      margin-bottom: map-get($spacings, 2);
+      color: $dark-color;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// ============================================
+// TEAM CARD COMPONENT
+// ============================================
+.team-card {
+  @include card-base;
+  overflow: hidden;
+  
+  .team-image {
+    @include aspect-ratio(1, 1);
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  
+  .team-info {
+    padding: map-get($spacings, 6);
+    
+    h3 {
+      margin: 0 0 map-get($spacings, 1);
+      @include font-size('xl');
+      color: $dark-color;
+    }
+    
+    .team-role {
+      color: $primary-color;
+      @include font-weight('medium');
+      margin-bottom: map-get($spacings, 4);
+    }
+    
+    p {
+      color: $medium-gray;
+      line-height: 1.6;
+      margin-bottom: map-get($spacings, 4);
+    }
+    
+    .team-specialty {
+      padding: map-get($spacings, 3);
+      background-color: $light-color;
+      border-radius: map-get($border-radius, 'md');
+      @include font-size('sm');
+    }
+  }
+}
+
+// ============================================
+// CONTACT CARD COMPONENT
+// ============================================
+.contact-card {
+  @include card-base;
+  @include flex-column-center;
+  text-align: center;
+  padding: map-get($spacings, 6);
+  
+  .contact-icon {
+    @include font-size('3xl');
+    margin-bottom: map-get($spacings, 4);
+  }
+  
+  h3 {
+    margin: 0 0 map-get($spacings, 3);
+    @include font-size('xl');
+    color: $dark-color;
+  }
+  
+  p {
+    color: $medium-gray;
+    line-height: 1.6;
+    margin-bottom: map-get($spacings, 2);
+  }
+  
+  address {
+    font-style: normal;
+    margin-bottom: map-get($spacings, 4);
+  }
+  
+  .phone-link,
+  .email-link {
+    color: $primary-color;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// ============================================
+// AWARD COMPONENT
+// ============================================
+.award {
+  display: flex;
+  align-items: center;
+  gap: map-get($spacings, 6);
+  padding: map-get($spacings, 4) 0;
+  border-bottom: 1px solid $light-gray;
+  
+  &:last-child {
+    border-bottom: none;
+  }
+  
+  .award-year {
+    @include font-size('2xl');
+    @include font-weight('bold');
+    color: $primary-color;
+    min-width: 80px;
+  }
+  
+  .award-content {
+    h3 {
+      margin: 0 0 map-get($spacings, 1);
+      @include font-size('lg');
+      color: $dark-color;
+    }
+    
+    p {
+      color: $medium-gray;
+      margin: 0;
+    }
+  }
+}
+
+// ============================================
+// FAQ COMPONENT
+// ============================================
+.faq-item {
+  margin-bottom: map-get($spacings, 4);
+  border: 1px solid $light-gray;
+  border-radius: map-get($border-radius, 'md');
+  overflow: hidden;
+  
+  summary {
+    padding: map-get($spacings, 4);
+    @include font-weight('medium');
+    color: $dark-color;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    
+    &::marker {
+      display: none;
+    }
+    
+    &::-webkit-details-marker {
+      display: none;
+    }
+    
+    &::after {
+      content: '+';
+      position: absolute;
+      right: map-get($spacings, 4);
+      @include font-size('xl');
+      transition: $transition-base;
+    }
+  }
+  
+  &[open] {
+    summary {
+      &::after {
+        content: '−';
+      }
+    }
+    
+    .faq-content {
+      animation: fadeIn 0.3s ease;
+    }
+  }
+  
+  .faq-content {
+    padding: 0 map-get($spacings, 4) map-get($spacings, 4);
+    
+    p {
+      color: $medium-gray;
+      line-height: 1.6;
+      margin-bottom: map-get($spacings, 3);
+    }
+    
+    ul {
+      margin: map-get($spacings, 3) 0;
+      padding-left: map-get($spacings, 4);
+      
+      li {
+        margin-bottom: map-get($spacings, 2);
+        color: $medium-gray;
+        
+        strong {
+          color: $dark-color;
+        }
+      }
+    }
+  }
+}
+
+// ============================================
+// ANIMATIONS
+// ============================================
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

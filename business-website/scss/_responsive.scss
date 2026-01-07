@@ -1,0 +1,148 @@
+// ============================================
+// RESPONSIVE UTILITIES
+// ============================================
+.hide {
+  &-mobile {
+    @include respond-to('md') {
+      display: none;
+    }
+  }
+  
+  &-desktop {
+    @include respond-to('md', 'max') {
+      display: none;
+    }
+  } 
+}
+
+// ============================================
+// MOBILE MENU
+// ============================================
+@include respond-to('md', 'max') {
+  .main-nav {
+    .nav-list {
+      position: fixed;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      background-color: $white;
+      box-shadow: map-get($box-shadows, 'md');
+      padding: map-get($spacings, 4);
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: $transition-slow;
+      z-index: map-get($z-layers, 'dropdown');
+      
+      &.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
+
+// ============================================
+// RESPONSIVE TYPOGRAPHY
+// ============================================
+html {
+  font-size: 16px;
+  
+  @include respond-to('md') {
+    font-size: 17px;
+  }
+  
+  @include respond-to('lg') {
+    font-size: 18px;
+  }
+}
+
+// ============================================
+// RESPONSIVE SPACING
+// ============================================
+@include respond-to('md') {
+  .section-header {
+    margin-bottom: map-get($spacings, 12);
+  }
+  
+  .dishes-grid,
+  .testimonials-grid,
+  .services-grid {
+    gap: map-get($spacings, 8);
+    margin-top: map-get($spacings, 12);
+  }
+}
+
+// ============================================
+// RESPONSIVE HERO
+// ============================================
+@include respond-to('md', 'max') {
+  .hero {
+    .hero-content {
+      h1 {
+        @include font-size('3xl');
+      }
+      
+      .hero-subtitle {
+        @include font-size('lg');
+      }
+    }
+  }
+}
+
+// ============================================
+// RESPONSIVE FORMS
+// ============================================
+@include respond-to('md', 'max') {
+  .form-actions {
+    flex-direction: column;
+    
+    .btn {
+      width: 100%;
+    }
+  }
+}
+
+// ============================================
+// RESPONSIVE FOOTER
+// ============================================
+@include respond-to('md', 'max') {
+  .footer-grid {
+    .footer-col {
+      text-align: center;
+      
+      .social-links {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+// ============================================
+// PRINT STYLES
+// ============================================
+@media print {
+  .main-header,
+  .main-footer,
+  .menu-categories,
+  .hero-buttons,
+  .btn {
+    display: none !important;
+  }
+  
+  body {
+    font-size: 12pt;
+    color: $black;
+  }
+  
+  a {
+    color: $black;
+    text-decoration: none;
+  }
+  
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+}

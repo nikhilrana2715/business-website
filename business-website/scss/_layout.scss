@@ -1,0 +1,403 @@
+// ============================================
+// BASE LAYOUT - CSS GRID
+// ============================================
+body {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+ 
+.main-header {
+  grid-area: header;
+  position: sticky;
+  top: 0;
+  background-color: $white;
+  box-shadow: map-get($box-shadows, 'sm');
+  z-index: map-get($z-layers, 'sticky');
+}
+
+.main-content {
+  grid-area: main;
+}
+
+.main-footer {
+  grid-area: footer;
+}
+
+// ============================================
+// CONTAINER
+// ============================================
+.container {
+  @include container;
+}
+
+// ============================================
+// HEADER LAYOUT
+// ============================================
+.main-header {
+  .container {
+    @include flex-between;
+    padding-top: map-get($spacings, 4);
+    padding-bottom: map-get($spacings, 4);
+  }
+  
+  .logo {
+    h1 {
+      margin: 0;
+      @include font-size('xl');
+      color: $primary-color;
+      font-family: $font-secondary;
+    }
+    
+    .tagline {
+      margin: map-get($spacings, 1) 0 0;
+      @include font-size('xs');
+      color: $medium-gray;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+// ============================================
+// HERO LAYOUT - CSS GRID
+// ============================================
+.hero {
+  .container {
+    display: grid;
+    gap: map-get($spacings, 8);
+    
+    @include respond-to('lg') {
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+  }
+  
+  .hero-content {
+    h1 {
+      @include font-size('4xl');
+      color: $dark-color;
+      margin-bottom: map-get($spacings, 4);
+      line-height: 1.2;
+      
+      @include respond-to('md') {
+        @include font-size('5xl');
+      }
+    }
+    
+    .hero-subtitle {
+      @include font-size('xl');
+      color: $medium-gray;
+      margin-bottom: map-get($spacings, 6);
+    }
+    
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: map-get($spacings, 4);
+    }
+  }
+  
+  .hero-image {
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: map-get($border-radius, 'xl');
+      box-shadow: map-get($box-shadows, 'lg');
+    }
+  }
+}
+
+// ============================================
+// DISHES GRID - CSS GRID with auto-fit
+// ============================================
+.dishes-grid {
+  @include grid-auto-fit(300px);
+  gap: map-get($spacings, 6);
+  margin-top: map-get($spacings, 8);
+}
+
+// ============================================
+// RESERVATION LAYOUT - CSS GRID
+// ============================================
+.reservation-wrapper {
+  display: grid;
+  gap: map-get($spacings, 8);
+  
+  @include respond-to('lg') {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+// ============================================
+// TESTIMONIALS GRID - CSS GRID
+// ============================================
+.testimonials-grid {
+  @include grid-auto-fit(300px);
+  gap: map-get($spacings, 6);
+  margin-top: map-get($spacings, 8);
+}
+
+// ============================================
+// STORY LAYOUT - CSS GRID
+// ============================================
+.story-grid {
+  display: grid;
+  gap: map-get($spacings, 8);
+  
+  @include respond-to('md') {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}
+
+// ============================================
+// PHILOSOPHY GRID - CSS GRID
+// ============================================
+.philosophy-grid {
+  @include grid-auto-fit(250px);
+  gap: map-get($spacings, 6);
+  margin-top: map-get($spacings, 8);
+}
+
+// ============================================
+// TEAM GRID - CSS GRID
+// ============================================
+.team-grid {
+  @include grid-auto-fit(350px);
+  gap: map-get($spacings, 6);
+  margin-top: map-get($spacings, 8);
+}
+
+// ============================================
+// SERVICES GRID - CSS GRID
+// ============================================
+.services-grid {
+  @include grid-auto-fit(300px);
+  gap: map-get($spacings, 6);
+  margin-top: map-get($spacings, 8);
+}
+
+// ============================================
+// MENU GRID - CSS GRID
+// ============================================
+.menu-grid {
+  display: grid;
+  gap: map-get($spacings, 4);
+  margin-top: map-get($spacings, 6);
+}
+
+// ============================================
+// CONTACT GRID - CSS GRID
+// ============================================
+.contact-grid {
+  @include grid-auto-fit(300px);
+  gap: map-get($spacings, 6);
+  margin-top: map-get($spacings, 8);
+}
+
+// ============================================
+// FOOTER GRID - CSS GRID
+// ============================================
+.footer-grid {
+  display: grid;
+  gap: map-get($spacings, 8);
+  
+  @include respond-to('md') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @include respond-to('lg') {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .footer-col {
+    h3, h4 {
+      color: $dark-color;
+      margin-bottom: map-get($spacings, 4);
+    }
+    
+    h3 {
+      @include font-size('xl');
+      color: $primary-color;
+    }
+    
+    h4 {
+      @include font-size('lg');
+    }
+    
+    p {
+      color: $medium-gray;
+      line-height: 1.6;
+      margin-bottom: map-get($spacings, 4);
+    }
+  }
+  
+  .footer-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+    li {
+      margin-bottom: map-get($spacings, 2);
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    
+    a {
+      color: $medium-gray;
+      text-decoration: none;
+      transition: $transition-base;
+      
+      &:hover {
+        color: $primary-color;
+        padding-left: map-get($spacings, 2);
+      }
+    }
+  }
+  
+  .timings {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+    li {
+      margin-bottom: map-get($spacings, 2);
+      color: $medium-gray;
+      
+      span {
+        @include font-weight('medium');
+        color: $dark-color;
+      }
+    }
+  }
+  
+  .social-links {
+    display: flex;
+    gap: map-get($spacings, 4);
+    margin-top: map-get($spacings, 4);
+    
+    a {
+      color: $medium-gray;
+      text-decoration: none;
+      
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+.footer-bottom {
+  margin-top: map-get($spacings, 8);
+  padding-top: map-get($spacings, 6);
+  border-top: 1px solid $light-gray;
+  text-align: center;
+  
+  p {
+    color: $medium-gray;
+    @include font-size('sm');
+    
+    a {
+      color: $primary-color;
+      text-decoration: none;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// ============================================
+// SECTION HEADER
+// ============================================
+.section-header {
+  text-align: center;
+  margin-bottom: map-get($spacings, 8);
+  
+  h2 {
+    @include font-size('3xl');
+    color: $dark-color;
+    margin-bottom: map-get($spacings, 2);
+    
+    @include respond-to('md') {
+      @include font-size('4xl');
+    }
+  }
+  
+  .section-subtitle {
+    @include font-size('lg');
+    color: $medium-gray;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+// ============================================
+// PAGE HERO
+// ============================================
+.page-hero {
+  background: linear-gradient(135deg, $primary-color 0%, darken($primary-color, 10%) 100%);
+  color: $white;
+  padding: map-get($spacings, 12) 0;
+  text-align: center;
+  
+  h1 {
+    @include font-size('4xl');
+    margin-bottom: map-get($spacings, 2);
+    
+    @include respond-to('md') {
+      @include font-size('5xl');
+    }
+  }
+  
+  .hero-subtitle {
+    @include font-size('xl');
+    opacity: 0.9;
+  }
+}
+
+// ============================================
+// MENU CATEGORIES NAVIGATION
+// ============================================
+.menu-categories {
+  background-color: $light-color;
+  padding: map-get($spacings, 4) 0;
+  position: sticky;
+  top: 80px;
+  z-index: map-get($z-layers, 'sticky');
+  
+  .category-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: map-get($spacings, 2);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+    @include respond-to('md') {
+      gap: map-get($spacings, 4);
+    }
+  }
+  
+  .category-link {
+    display: inline-block;
+    padding: map-get($spacings, 2) map-get($spacings, 4);
+    color: $medium-gray;
+    text-decoration: none;
+    border-radius: map-get($border-radius, 'full');
+    transition: $transition-base;
+    
+    &:hover {
+      background-color: rgba($primary-color, 0.1);
+      color: $primary-color;
+    }
+  }
+}

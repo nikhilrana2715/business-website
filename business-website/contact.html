@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Spice Symphony</title>
+    <meta name="description" content="Get in touch with Spice Symphony for reservations, catering inquiries, and feedback">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body> 
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" aria-label="Spice Symphony Home">
+                    <h1>Spice Symphony</h1>
+                    <p class="tagline">Indian Fusion Cuisine</p>
+                </a>
+            </div>
+
+            <nav class="main-nav" aria-label="Main Navigation">
+                <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+                
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Menu & Services</a></li>
+                    <li><a href="contact.html" class="nav-link active" aria-current="page">Contact</a></li>
+                    <li><a href="index.html#reservation" class="btn btn-primary nav-cta">Reserve Table</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <!-- Contact Hero -->
+        <section class="page-hero" aria-labelledby="page-hero-heading">
+            <div class="container">
+                <h1 id="page-hero-heading">Contact Us</h1>
+                <p class="hero-subtitle">We'd love to hear from you</p>
+            </div>
+        </section>
+
+        <!-- Contact Information -->
+        <section class="contact-info-section" aria-labelledby="contact-info-heading">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <h3>Visit Us</h3>
+                        <address>
+                            <p><strong>Spice Symphony Restaurant</strong></p>
+                            <p>123 Food Street, Colaba</p>
+                            <p>Mumbai, Maharashtra 400005</p>
+                            <p>India</p>
+                        </address>
+                        <a href="https://maps.app.goo.gl/3gCr2s21GwPVmRET9" target="_blank" class="btn btn-outline" rel="noopener">Get Directions</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">📞</div>
+                        <h3>Call Us</h3>
+                        <p>For reservations and inquiries:</p>
+                        <p><a href="tel:07715963030" class="phone-link">+91 07715963030</a></p>
+                        <p>For catering and events:</p>
+                        <p><a href="tel:07715963030" class="phone-link">+91 07715963030</a></p>
+                        <p><small>Monday to Sunday, 10 AM to 10 PM</small></p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">✉️</div>
+                        <h3>Email Us</h3>
+                        <p>General inquiries:</p>
+                        <p><a href="mailto:info@spicesymphony.com" class="email-link">info@spicesymphony.com</a></p>
+                        <p>Events and catering:</p>
+                        <p><a href="mailto:events@spicesymphony.com" class="email-link">events@spicesymphony.com</a></p>
+                        <p>Feedback:</p>
+                        <p><a href="mailto:feedback@spicesymphony.com" class="email-link">feedback@spicesymphony.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="contact-form-section" aria-labelledby="contact-form-heading">
+            <div class="container">
+                <div class="form-container">
+                    <header class="section-header">
+                        <h2 id="contact-form-heading">Send Us a Message</h2>
+                        <p class="section-subtitle">We typically respond within 24 hours</p>
+                    </header>
+                    
+                    <form id="contactForm" class="contact-form" aria-labelledby="contact-form-heading">
+                        <div class="form-group">
+                            <label for="contact-name">Full Name *</label>
+                            <input type="text" id="contact-name" name="name" required aria-required="true">
+                            <span class="error-message" id="contactNameError"></span>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contact-email">Email Address *</label>
+                                <input type="email" id="contact-email" name="email" required aria-required="true">
+                                <span class="error-message" id="contactEmailError"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-phone">Phone Number</label>
+                                <input type="tel" id="contact-phone" name="phone">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required aria-required="true">
+                                <option value="">Select a subject</option>
+                                <option value="reservation">Table Reservation</option>
+                                <option value="catering">Catering Inquiry</option>
+                                <option value="events">Private Events</option>
+                                <option value="feedback">Feedback/Suggestion</option>
+                                <option value="partnership">Business Partnership</option>
+                                <option value="careers">Career Opportunities</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <span class="error-message" id="subjectError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-message">Message *</label>
+                            <textarea id="contact-message" name="message" rows="6" required aria-required="true" placeholder="Please provide details about your inquiry..."></textarea>
+                            <span class="error-message" id="contactMessageError"></span>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">Subscribe to our newsletter for updates and special offers</label>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                            <button type="reset" class="btn btn-secondary">Clear Form</button>
+                        </div>
+                        
+                        <p class="form-note">* Required fields. By submitting this form, you agree to our <a href="#">Privacy Policy</a>.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="map-section" aria-labelledby="map-heading">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="map-heading">Find Us</h2>
+                </header>
+                
+                <div class="map-container">
+                    <!-- Embedded Google Map -->
+                    <div class="map-placeholder" role="img" aria-label="Map showing Spice Symphony location at 123 Food Street, Mumbai">
+                        <div class="map-fallback">
+                            <h3>Our Location</h3>
+                            <p>📍 123 Food Street, KOKO Mumbai</p>
+                            <p><strong>Nearest Landmarks:</strong></p>
+                            <ul>
+                                <li>Gateway of India - 5 minute walk</li>
+                                <li>Colaba Causeway - 2 minute walk</li>
+                                <li>Taj Mahal Palace Hotel - 7 minute walk</li>
+                            </ul>
+                            <p><strong>Public Transport:</strong></p>
+                            <ul>
+                                <li>Churchgate Station - 15 minutes by taxi</li>
+                                <li>Colaba Bus Depot - 3 minute walk</li>
+                                <li>Parking available at nearby lots</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="transport-info">
+                        <h3>Getting Here</h3>
+                        <div class="transport-grid">
+                            <div class="transport-option">
+                                <div class="transport-icon">🚗</div>
+                                <h4>By Car</h4>
+                                <p>Parking available at Sterling Cinema parking lot (2 min walk)</p>
+                            </div>
+                            
+                            <div class="transport-option">
+                                <div class="transport-icon">🚌</div>
+                                <h4>By Bus</h4>
+                                <p>Buses 1, 2, 3, 4 stop at Colaba Depot</p>
+                            </div>
+                            
+                            <div class="transport-option">
+                                <div class="transport-icon">🚇</div>
+                                <h4>By Train</h4>
+                                <p>Nearest station: Churchgate (15 min taxi ride)</p>
+                            </div>
+                            
+                            <div class="transport-option">
+                                <div class="transport-icon">🚕</div>
+                                <h4>By Taxi/Ride-share</h4>
+                                <p>Available 24/7. Ask for "Food Street, Colaba"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" aria-labelledby="faq-heading">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="faq-heading">Frequently Asked Questions</h2>
+                </header>
+                
+                <div class="faq-grid">
+                    <details class="faq-item">
+                        <summary>What are your opening hours?</summary>
+                        <div class="faq-content">
+                            <p>We are open:</p>
+                            <ul>
+                                <li><strong>Monday - Friday:</strong> 11:00 AM to 11:00 PM</li>
+                                <li><strong>Saturday - Sunday:</strong> 10:00 AM to 12:00 AM</li>
+                                <li><strong>Public Holidays:</strong> 12:00 PM to 11:00 PM</li>
+                            </ul>
+                            <p>Last orders are taken 30 minutes before closing.</p>
+                        </div>
+                    </details>
+                    
+                    <details class="faq-item">
+                        <summary>Do you take walk-ins or only reservations?</summary>
+                        <div class="faq-content">
+                            <p>We welcome both walk-ins and reservations. However, we recommend making a reservation, especially:</p>
+                            <ul>
+                                <li>On weekends</li>
+                                <li>During holiday seasons</li>
+                                <li>For groups of 6 or more</li>
+                                <li>For dinner service (7 PM - 9 PM peak hours)</li>
+                            </ul>
+                            <p>You can make a reservation through our website, by phone, or using our mobile app.</p>
+                        </div>
+                    </details>
+                    
+                    <details class="faq-item">
+                        <summary>Do you have vegetarian/vegan options?</summary>
+                        <div class="faq-content">
+                            <p>Yes, we have an extensive vegetarian menu with over 40 options. We also have vegan dishes marked clearly on our menu. Our kitchen has separate preparation areas for vegetarian dishes.</p>
+                            <p>Please inform your server about any dietary restrictions, and our chefs will be happy to accommodate your needs.</p>
+                        </div>
+                    </details>
+                    
+                    <details class="faq-item">
+                        <summary>Is parking available?</summary>
+                        <div class="faq-content">
+                            <p>While we don't have dedicated parking, there are several parking options nearby:</p>
+                            <ul>
+                                <li><strong>Sterling Cinema Parking:</strong> 2-minute walk (rates: ₹50/hour)</li>
+                                <li><strong>Colaba Public Parking:</strong> 5-minute walk (rates: ₹30/hour)</li>
+                                <li><strong>Valet Service:</strong> Available on weekends for ₹200 (5 PM onwards)</li>
+                            </ul>
+                            <p>We recommend using public transport or ride-sharing services during peak hours.</p>
+                        </div>
+                    </details>
+                    
+                    <details class="faq-item">
+                        <summary>What is your cancellation policy for reservations?</summary>
+                        <div class="faq-content">
+                            <p>Our cancellation policy is as follows:</p>
+                            <ul>
+                                <li><strong>More than 24 hours notice:</strong> Free cancellation</li>
+                                <li><strong>4-24 hours notice:</strong> ₹500 cancellation fee per table</li>
+                                <li><strong>Less than 4 hours or no-show:</strong> ₹1000 cancellation fee per table</li>
+                                <li><strong>Large groups (8+ people):</strong> 48-hour notice required for free cancellation</li>
+                            </ul>
+                            <p>You can cancel or modify your reservation by calling us or through your confirmation email.</p>
+                        </div>
+                    </details>
+                    
+                    <details class="faq-item">
+                        <summary>Do you host private events or parties?</summary>
+                        <div class="faq-content">
+                            <p>Yes, we have a beautiful private dining room that can accommodate up to 30 guests. We also offer full restaurant buyouts for larger events.</p>
+                            <p>Our events team can help with:</p>
+                            <ul>
+                                <li>Customized menus</li>
+                                <li>Decorations and themes</li>
+                                <li>Audio-visual equipment</li>
+                                <li>Special dietary requirements</li>
+                            </ul>
+                            <p>Please contact our events team at <a href="mailto:events@spicesymphony.com">events@spicesymphony.com</a> for inquiries and availability.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <!-- Same footer structure -->
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Spice Symphony</h3>
+                    <p>Where traditional Indian spices meet modern culinary artistry.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Follow us on Facebook">Facebook</a>
+                        <a href="#" aria-label="Follow us on Instagram">Instagram</a>
+                        <a href="#" aria-label="Follow us on Twitter">Twitter</a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <address>
+                        <p>📍 123 Food Street, KOKO Mumbai</p>
+                        <p>📞 +91 07715963030</p>
+                        <p>✉️ info@spicesymphony.com</p>
+                    </address>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Opening Hours</h4>
+                    <ul class="timings">
+                        <li><span>Monday - Friday:</span> 11 AM - 11 PM</li>
+                        <li><span>Saturday - Sunday:</span> 10 AM - 12 AM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Spice Symphony. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Contact Us</a></p>
+            </div>
+        </div>
+    </footer> 
+
+    <script src="js/menu-toggle.js" defer></script>
+    <script src="js/form-validation.js" defer></script>
+    <script src="js/main.js" defer></script>
+</body>
+</html>
